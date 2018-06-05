@@ -1,0 +1,14 @@
+<div class="header" 
+		 [class.fixed]="_elementsScrollHeightService.showFixedMenu"
+		 [class.hide-fixed]="_elementsScrollHeightService.hideFixedMenu">
+	<div class="logo">
+		<img [src]="logo" (click)="scrollTo('main')" alt=""/></div>
+	<ul class="nav-bar">
+		<li *ngFor="let item of menuItems" 
+				(click)="scrollTo(item.id)"
+				[class.active]="(_elementsScrollHeightService.primeViewLine > item.offsetTop &&
+												 _elementsScrollHeightService.primeViewLine < item.offsetBottom)">
+			<span>{{item.name}}</span>
+		</li>
+	</ul>
+</div>

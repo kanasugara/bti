@@ -14,6 +14,13 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "baseUrl": "src",
+    "paths": {
+      "@shared/components": ["app/components/index.c.ts"],
+      "@shared/models": ["app/models/index.m.ts"],
+      "@shared/services": ["app/services/index.s.ts"],
+      "@env": ["environments/environment.ts"]
+    }
   }
 }

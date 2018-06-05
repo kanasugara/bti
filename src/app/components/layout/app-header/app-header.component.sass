@@ -1,0 +1,106 @@
+@import '~assets/fonts'
+
+.header
+	background-color: rgba(0, 0, 0, 0.7)
+	display: flex
+	justify-content: space-between
+	position: relative
+	z-index: 1
+
+	.logo
+		height: 80px
+
+		img
+			cursor: pointer
+			height: 100%
+
+	.nav-bar
+		align-self: center
+		height: 80px
+
+		li
+			color: white
+			cursor: pointer
+			display: inline-block
+			font-family: 'Highliner Light', serif
+			font-size: 5em
+			font-weight: normal
+			padding: 0 8px
+			text-transform: uppercase
+
+			&:hover
+				background-color: white
+				color: black
+
+.fixed
+	animation: slideLeft 300ms linear forwards
+	background-color: transparent
+	font-size: 10px
+	position: fixed
+	right: -100px
+	top: 250px
+
+	div
+		position: absolute
+		right: 4px
+		top: -85px
+
+	.nav-bar
+		height: auto
+		padding-right: 16px
+		text-align: right
+
+		li
+			display: list-item
+			font-size: 50px
+			height: 30px
+			line-height: 15px
+			padding: 0
+			position: relative
+			text-transform: lowercase
+			transition: padding-right 200ms linear, opacity 200ms linear
+
+			&:not(.active)
+				opacity: .7
+
+			&.active
+				padding-right: 16px
+
+				&:last-child
+					padding-right: 32px
+
+			&:hover
+				background-color: transparent
+
+			&::after
+				border-bottom: 1px solid white
+				content: ''
+				height: 1px
+				margin-left: 5px
+				position: absolute
+				top: 50%
+				transform: translate(0%, -50%)
+				width: 300px
+
+			span
+				display: block
+				height: 30px
+				overflow: hidden
+				padding-left: 5px
+
+.hide-fixed
+	animation: slideRight 150ms linear forwards
+
+@keyframes slideLeft
+	from
+		right: -100px
+
+	to
+		right: 0
+
+@keyframes slideRight
+	from
+		right: 0
+
+	to
+		right: -100px
