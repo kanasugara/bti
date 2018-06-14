@@ -14,7 +14,7 @@ export class AppHeaderComponent implements OnInit {
 	menuItems: Array<MenuItem>;
 	scrollPosition: number;
 
-	constructor(private _elementsScrollHeightService: ElementsScrollHeightService) {
+	constructor(public _elementsScrollHeightService: ElementsScrollHeightService) {
 		this.logo = 'assets/images/logo.png';
 	}
 

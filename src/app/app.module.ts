@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { AgmCoreModule } from '@agm/core';
 
 // Components
 import {
@@ -20,6 +21,10 @@ const routes = [
 	{ path: 'home', component: HomeComponent },
 ];
 
+const googleMapsCore = AgmCoreModule.forRoot({
+	apiKey : 'AIzaSyB6PzPCKXOxqchWI5hoHa3bD0fGRcwpjig',
+});
+
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -30,6 +35,7 @@ const routes = [
 	imports: [
 		BrowserModule,
 		HttpModule,
+		googleMapsCore,
 		RouterModule.forRoot(routes)
 	],
 	providers: [DataService, ElementsScrollHeightService],

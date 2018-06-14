@@ -1,20 +1,119 @@
 <div id="main">
-<!-- 	<img [src]="image" alt=""> -->
-	<div class="chart">
-		<ul class="chart-skills">
-		  <li>
-		    <span>Poslug</span>
-		  </li>
-		  <li>
-		    <span>Money</span>
-		  </li>
-		   <li>
-		    <span>Villages</span>
-		  </li>
-		</ul>
+	<p>
+		Бюро технічної інвентаризації
+		<br>
+		м. Бережани
+	</p>
+	<p>
+		ООО «Одесское региональное БТИ» — лидер Одессы в сфере технической инвентаризации, регистрации, разрешения на строительство и ввод в эксплуатацию, изготовление экспертной оценки недвижимости и ввода в эксплуатацию. Так же мы готовы вас проконсультировать и оказать юридическую помощь на всех этапах оформления недвижимости: строений и земельных участков.
+	</p>
+	<a class="button">
+		Замовити консультацію
+	</a>
+	<div class="arrow bounce">
+	  <img [src]="icon.scroll" alt="scroll down">
 	</div>
 </div>
-<div id="service">Послуги</div>
+<div class="metrics">
+	<p>За 2017 рік</p>
+	<ul>
+		<li>
+			<img [src]="icon.service" alt="">
+			<p>
+				<span>Надано послуг 1234,</span>
+				<br>
+				<span>втч для населення 996</span>
+			</p>
+		</li>
+		<li>
+			<img [src]="icon.money" alt="">
+			<p>
+				<span>Отримано коштів 1234123,</span>
+				<br>
+				<span>втч для населення 99632</span>
+			</p>
+		</li>
+		<li>
+			<img [src]="icon.house" alt="">
+			<p>
+				<span>Обслуговує 234 населених пунктів</span>
+				<br>
+				<span>втч 46 сіл</span>
+			</p>
+			
+		</li>
+	</ul>
+</div>
+<div class="poslugu-cards">
+	<ul>
+		<li>
+			Техническая инвентаризация
+		</li>
+		<li>
+			Ввод в эксплуатацию
+		</li>
+		<li>
+			Оформление земли (земельного участка)
+		</li>
+		<li>
+			Регистрация Недвижимости
+		</li>
+		<li>
+		Независимая экспертная оценка
+		</li>
+	</ul>
+</div>
+<div id="service">
+	<div class="img"></div>
+	<div class="poslugu-info-wrapper">
+		<div class="poslugu-info">
+			<h4>
+				Услуги БТИ по технической инвентаризации
+			</h4>
+			<p>
+				Техническая инвентаризация объектов недвижимости — это комплекс работ по определению площади конструкции, положению на местности, материала, протяженности и других характеристик объекта.
+				<br><br>
+				Технический паспорт — это один из главных документов на дом, квартиру, здание или другое капитальное строение. На его основании площадь объекта недвижимости вносится в Реестр прав собственности на недвижимое имущество и множество других операций, связанных с недвижимостью.
+			</p>
+		</div>
+	</div>
+</div>
 <div id="about">Про нас</div>
-<div id="contacts">Контакти</div>
-<div id="map">map</div>
+<div class="sertificates">
+	Сертификати БТІ
+	<img *ngFor="let item of image.sertificates" [src]="item" alt="">
+</div>
+<div class="contacts">
+	<agm-map class="agm-map" 
+					 [latitude]="center.lat"
+					 [longitude]="center.lng"
+					 [scrollwheel]="false"
+					 [styles]="styles"
+					 [zoom]="16">
+	  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+	</agm-map>
+	<div class="contacts-info">
+		<h4>
+  		Наші контакти:
+  	</h4>
+	
+	  	
+	Телефон:<br>
+	(048) 734-88-81<br>
+	info@orbti.com.ua<br>
+<br>
+	Адреса:<br>
+	м. Бережани, вул. Троицкая, 33а<br>
+	ул. Заболотного, 28 <br>
+	графік роботи <br>
+	пн івафі<br>
+	вт фівфів<br>
+	ср івафі<br>
+	чт фівфів<br>
+	пт івафі<br>
+	прийомні дні <br>
+	пн івафі<br>
+	вт фівфів<br>
+	</div>
+</div>
+
