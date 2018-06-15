@@ -10,6 +10,7 @@ import { ElementsScrollHeightService } from '@shared/services';
 export class HomeComponent implements OnInit {
 	image: any;
 	icon: any;
+	styles: any;
 
 	center: {
 		lat: number,
@@ -49,26 +50,26 @@ export class HomeComponent implements OnInit {
 			lng: 24.933441
 		};
 		this.styles = [
-			  {
-			    featureType: "all",
-			    stylers: [
-			      { saturation: -80 }
-			    ]
-			  },{
-			    featureType: "road.arterial",
-			    elementType: "geometry",
-			    stylers: [
-			      { hue: "#00ffee" },
-			      { saturation: 50 }
-			    ]
-			  },{
-			    featureType: "poi.business",
-			    elementType: "labels",
-			    stylers: [
-			      { visibility: "off" }
-			    ]
-			  }
-			];
+			{
+				featureType: "all",
+				stylers: [
+					{ saturation: -80 }
+				]
+			},{
+				featureType: "road.arterial",
+				elementType: "geometry",
+				stylers: [
+					{ hue: "#00ffee" },
+					{ saturation: 50 }
+				]
+			},{
+				featureType: "poi.business",
+				elementType: "labels",
+				stylers: [
+					{ visibility: "off" }
+				]
+			}
+		];
 
 		this.icon = {
 			service: 'assets/images/service-icon.png',
