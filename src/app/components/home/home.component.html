@@ -5,16 +5,16 @@
 		м. Бережани
 	</p>
 	<p>
-		ООО «Одесское региональное БТИ» — лидер Одессы в сфере технической инвентаризации, регистрации, разрешения на строительство и ввод в эксплуатацию, изготовление экспертной оценки недвижимости и ввода в эксплуатацию. Так же мы готовы вас проконсультировать и оказать юридическую помощь на всех этапах оформления недвижимости: строений и земельных участков.
+		Вже понад <span>30 років</span> на ринку БТІ, більше <span>50 000</span> виконаних замовлень, серед яких виготовлення техпаспортів, інформаційних довідок, розподіл майна та інші послуги в сфері інженірінгу. Завжди готові надати вам <span>безоплатну</span> технічну та юридичну допомогу на всіх етапах оформлення нерухомості. Якісно. Надійно. <span class="span">Швидко.</span>
 	</p>
-	<a class="button">
+<!-- 	<a class="button">
 		Замовити консультацію
-	</a>
+	</a> -->
 	<div class="arrow bounce">
 	  <img [src]="icon.scroll" alt="scroll down">
 	</div>
 </div>
-<div class="metrics">
+<!-- <div class="metrics">
 	<p>За 2017 рік</p>
 	<ul>
 		<li>
@@ -43,47 +43,83 @@
 			
 		</li>
 	</ul>
-</div>
-<div class="poslugu-cards">
-	<ul>
-		<li>
-			Техническая инвентаризация
-		</li>
-		<li>
-			Ввод в эксплуатацию
-		</li>
-		<li>
-			Оформление земли (земельного участка)
-		</li>
-		<li>
-			Регистрация Недвижимости
-		</li>
-		<li>
-		Независимая экспертная оценка
-		</li>
-	</ul>
-</div>
+</div> -->
 <div id="service">
-	<div class="img"></div>
-	<div class="poslugu-info-wrapper">
-		<div class="poslugu-info">
-			<h4>
-				Техническая инвентаризация и изготовление техпаспорта
-			</h4>
-			<p>
-				Техническая инвентаризация объектов недвижимости — это комплекс работ по определению площади конструкции, положению на местности, материала, протяженности и других характеристик объекта.
-				<br><br>
-				Технический паспорт — это один из главных документов на дом, квартиру, здание или другое капитальное строение. На его основании площадь объекта недвижимости вносится в Реестр прав собственности на недвижимое имущество и множество других операций, связанных с недвижимостью.
-			</p>
+	<div *ngFor="let service of services">
+		<div class="img" [ngStyle]="{'background-image': 'url(' + service.image +')'}">
+		</div>
+		<div class="poslugu-info-wrapper">
+			<div class="poslugu-info">
+				<h4>
+					{{service.title}}
+				</h4>
+				<p *ngFor="let text of service.text">
+				{{text}}			
+				</p>
+			</div>
 		</div>
 	</div>
 </div>
-<div id="about">Про нас</div>
-<div class="sertificates">
-	Сертификати БТІ
-	<img *ngFor="let item of image.sertificates" [src]="item" alt="">
+<!-- <div id="about">Про нас</div> -->
+<div id="sertificates" >
+	<h1>Наші сертифікати</h1>
+	<div class="sertificates">
+			<img  *ngFor="let item of image.sertificates; index as i"
+						[ngClass]="{'left': i==0,
+											  'active': i==1,
+											  'right': i==2}"
+			 			(click)="moveToActive($event)"
+			 			[src]="item" alt="">
+	</div>
 </div>
-<div class="contacts">
+<div class="circle-icons">
+	<ul>
+		<li>
+			<div>
+				<img src="assets/images/circle-icons/good.png" alt="">
+			</div>
+			<h5>Надійний сервіс</h5>
+			<p>Ми беремося за той вид роботи, в якому впевнені на 100%. Кожен етап оформлення документів прописується за договірними відносинами.</p>
+		</li>
+		<li>
+			<div>
+				<img src="assets/images/circle-icons/money.png" alt="">
+			</div>
+			<h5>Безоплатна консультація</h5>
+			<p>
+				Наша команда абсолютно безкоштовно відповість на будь-які питання, що у Вас виникли. Ви можете задати питання по телефону або запитати його у нас прямо в офісі.
+			</p>
+		</li>
+		<li>
+			<div>
+				<img src="assets/images/circle-icons/team.png" alt="">
+			</div>
+			<h5>Досвідчені фахівці</h5>
+			<p>
+				Розрахунки виконують тільки атестовані фахівці зі стажем від 20-и років та досвідом понад 15000 виконаних замовлень.
+			</p>
+		</li>
+		<li>
+			<div>
+				<img src="assets/images/circle-icons/time.png" alt="">
+			</div>
+			<h5>Розумні терміни</h5>
+			<p>
+				Час технічної інвентаризації об'єктів нерухомості залежить від визначення їх площі, об'єму, стану, інвентаризаційної вартості і оформленням технічного паспорта.
+			</p>
+		</li>
+		<li>
+			<div>
+				<img src="assets/images/circle-icons/ruller.png" alt="">
+			</div>
+			<h5>Повний обсяг</h5>
+			<p>
+				Надаємо комплекс послуг в сфері технічної інвентаризації та інші послуги в сфері інженірінгу.
+			</p>
+		</li>
+	</ul>
+</div>
+<div id="contacts"  class="contacts">
 	<agm-map class="agm-map" 
 					 [latitude]="center.lat"
 					 [longitude]="center.lng"
@@ -94,47 +130,31 @@
 	</agm-map>
 	<div class="contacts-info-wrapper">
 		<div class="contacts-info">
-		<h4>
-  		Наші контакти:
-  	</h4>
-		<h5>Телефон:</h5>
-		<span>
-			(035) 48 225 73
-		</span>
-		<br>
-		<span>
-			berezhany.bti@gmail.com
-		</span>
-		<h5>Адреса:</h5>
-		<span>м. Бережани, площа Ринок 15</span>
-		<h5>Графік роботи</h5>
-		<ul>
-			<li>
-				<span>ПН</span>
-				<span>8:00 - 17:00</span>
-			</li>
-			<li>
-				<span>ВТ</span>
-				<span>8:00 - 17:00</span>
-			</li>
-			<li>
-				<span>СР</span>
-				<span>8:00 - 17:00</span>
-			</li>
-			<li>
-				<span>ЧТ</span>
-				<span>8:00 - 17:00</span>
-			</li>
-			<li>
-				<span>ПТ</span>
-				<span>8:00 - 16:00</span>
-			</li>
-			<li>
-				<span>СБ, НД</span>
-				<span>вихідний</span>
-			</li>
-		</ul>
-	</div>
+			<h4>
+				Наші контакти:
+			</h4>
+			<div>
+				<h5>Телефон:</h5>
+				<span>(035) 48 225 73</span>
+				<br>
+				<span>berezhany.bti@gmail.com</span>
+			</div>
+			<div>
+				<h5>Адреса:</h5>
+				<span>м. Бережани, площа Ринок 15</span>
+				</div>
+			<div>
+				<h5>Графік роботи</h5>
+				<ul>
+					<li *ngFor="let day of schedule">
+						<span>{{day.name}}</span>
+						<span>
+							{{day.time.from}} <span *ngIf="day && day.time.to"> - </span> {{day.time.to}}
+					</span>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</div>
 </div>
 
