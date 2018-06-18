@@ -27,10 +27,6 @@ export class ElementsScrollHeightService {
 			const element: HTMLElement = document.getElementById(this.menuItems[i].id);
 			this.menuItems[i].offsetTop = element.offsetTop;
 			this.menuItems[i].offsetBottom = element.offsetTop + element.offsetHeight;
-
-			console.log(this.menuItems[i].id);
-			console.log(this.menuItems[i].offsetTop);
-			console.log(this.menuItems[i].offsetBottom);
 		}
 	}
 
@@ -38,7 +34,6 @@ export class ElementsScrollHeightService {
 		const el: HTMLElement = document.getElementById(event.target.id);
 		const position: number = el.scrollTop;
 		this.primeViewLine = position + window.innerHeight / 2;
-		console.log(this.primeViewLine);
 		this.showHideSideNavBar(position);
 	}
 
