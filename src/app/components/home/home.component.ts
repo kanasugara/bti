@@ -40,9 +40,9 @@ export class HomeComponent implements AfterViewInit {
 				width: '640px'
 			},
 			sertificates: [
-			'assets/images/sertificates/001.jpg',
-			'assets/images/sertificates/002.jpg',
-			'assets/images/sertificates/003.jpg'
+			'assets/images/sertificates/001.JPG',
+			'assets/images/sertificates/002.JPG',
+			'assets/images/sertificates/003.JPG'
 			]
 		};
 
