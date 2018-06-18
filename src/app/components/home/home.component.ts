@@ -228,7 +228,7 @@ export class HomeComponent implements AfterViewInit {
 		if (event.target.className === 'active') {
 			return;
 		} else {
-			const element = document.querySelector('.active');
+			const element = document.querySelector('img.active');
 			if (event.target.nextElementSibling === null) {
 				element.className = 'left';
 				event.target.className = 'active';
